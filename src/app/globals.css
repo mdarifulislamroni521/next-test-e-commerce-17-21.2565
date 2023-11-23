@@ -1,0 +1,186 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+  overflow-x: hidden;
+}
+*,
+*::after {
+  box-sizing: border-box;
+}
+
+.backfource-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+}
+
+.ck.ck-content p {
+  @apply text-sm;
+}
+
+.scroll-bar-none::-webkit-scrollbar {
+  display: none;
+}
+
+/* slider css */
+/* Styles for the slider component */
+.shop-range-slider {
+  @apply h-[7px] w-full bg-[#ddd] rounded-full;
+}
+
+/* Styles for the slider thumb */
+.shop-range-slider .thumb {
+  @apply h-4 w-4 rounded-sm border-[3px] border-color-orange-deep bg-color-primary cursor-grab absolute top-1/2 -translate-y-1/2 left-0 shadow;
+}
+
+/* Styles for the slider active state */
+.shop-range-slider .thumb.active {
+  @apply border-[3px] border-color-orange-deep;
+}
+
+.shop-range-slider .thumb.active::before {
+  @apply hidden;
+}
+
+.shop-range-slider .thumb.active:focus-visible {
+  @apply outline-none;
+}
+
+.shop-range-slider .track.track-1 {
+  @apply h-full bg-color-orange-deep;
+}
+
+/* custom class */
+
+.container {
+  @apply max-w-7xl m-auto pl-3 pr-3 sm:pl-4 sm:pr-4 md:pl-6 md:pr-6;
+}
+
+.right-border {
+  @apply after:content-['|'] after:inline-block after:absolute after:top-1/2 after:-translate-y-1/2 after:right-0 after:text-color-grey-deep relative;
+}
+.before-border {
+  @apply before:content-['|'] before:inline-block before:absolute before:top-1/2 before:-translate-y-1/2 before:right-0 before:text-color-grey-deep relative;
+}
+
+.drop-down::after {
+  display: inline-block;
+
+  margin-left: 0.255em;
+  vertical-align: 0.255em;
+  content: "";
+  border-top: 0.3em solid;
+  border-right: 0.3em solid transparent;
+  border-bottom: 0;
+  border-left: 0.3em solid transparent;
+}
+.drop-up::after {
+  display: inline-block;
+  margin-left: 0.255em;
+  vertical-align: 0.255em;
+  content: "";
+  border-top: 0;
+  border-right: 0.3em solid transparent;
+  border-bottom: 0.3em solid;
+  border-left: 0.3em solid transparent;
+}
+
+.nav-btn {
+  @apply text-white p-5 pt-[20px] pb-[20px] font-bold relative duration-100 overflow-hidden;
+}
+
+.active {
+  @apply before:content-[''] before:absolute before:left-0 before:right-0 before:bottom-0 before:h-1 before:w-10/12 before:bg-color-yellow-deep before:m-auto before:rounded-t-md;
+}
+.nav-btn.ho-active {
+  @apply hover:before:content-[''] hover:before:absolute hover:before:left-0 hover:before:right-0 hover:before:bottom-0 hover:before:h-1 hover:before:w-10/12 hover:before:bg-color-yellow-deep hover:before:m-auto hover:before:rounded-t-md hover:before:duration-300 hover:before:animate-fadeup-20;
+}
+
+.border-bottom-img {
+  @apply relative after:content-[''] after:block after:w-64 after:h-6 after:bg-no-repeat after:m-auto after:bg-[url('https://themebeyond.com/html/venam/img/images/title_shape.png')];
+}
+
+.product-slide-btn {
+  @apply p-2 pt-4 pb-4 text-s14 relative hover:text-color-orange-deep duration-300 after:border-b after:absolute after:-bottom-[1px] after:left-0 after:w-full border-color-transparent select-none;
+}
+
+.color-checked {
+  @apply after:hidden peer-checked:after:flex after:absolute  after:top-0 after:left-0 after:content-['✔'] after:w-full after:h-full after:bg-black after:bg-opacity-10 after:rounded-full after:items-center after:justify-center after:text-color-primary;
+}
+
+.pagination-btn {
+  @apply flex justify-center items-center w-9 h-9 p-2 text-center  rounded-full  hover:text-color-orange-deep text-sm duration-300;
+}
+
+.pagination-btn-prev-nxt {
+  @apply flex justify-center items-center w-9 h-9 shadow p-2 text-center  rounded-full bg-color-grey-deep-light text-sm  border-2 border-color-grey-deep-light hover:border-color-orange-deep hover:text-color-orange-deep duration-300;
+}
+
+.cart-table thead {
+  border: 1px solid #c3c2c2;
+  border-collapse: collapse;
+}
+.cart-table tr {
+  border: 1px solid #c3c2c2;
+  border-collapse: collapse;
+}
+.cart-table td {
+  padding: 15px 3px;
+}
+
+.billing-input,
+.global-input {
+  @apply w-full p-2 pl-3 pr-3 border rounded border-color-grey-light text-sm focus:outline-none focus:border-color-grey-deep;
+}
+
+.billing-label,
+.global-label {
+  @apply text-s13 font-bold pb-1 block text-color-grey-deep;
+}
+
+#user-table {
+  @apply text-color-grey-deep text-sm;
+}
+#user-table tr th {
+  @apply text-black text-s13 border border-color-grey-light p-1;
+}
+
+#user-table tr td {
+  @apply border border-color-grey-light pl-1 pr-1;
+}
+
+.input-spin-visible::-webkit-inner-spin-button,
+.input-spin-visible::-webkit-outer-spin-button {
+  opacity: 1;
+}
+
+.shadow-border {
+  @apply border border-color-grey-light;
+}
