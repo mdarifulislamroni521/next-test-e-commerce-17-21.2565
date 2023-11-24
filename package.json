@@ -2,12 +2,12 @@
   "name": "ecommerce",
   "version": "0.1.0",
   "private": true,
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "export": "next export",
-    "start": "next start",
+    "start": "node index.js",
     "lint": "next lint",
     "server": "nodemon server.js",
     "server-p": "ENVIRONMENT=production nodemon server.js"
