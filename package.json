@@ -10,8 +10,7 @@
     "start": "next start",
     "lint": "next lint",
     "server": "nodemon server.js",
-    "server-p": "ENVIRONMENT=production nodemon server.js",
-    "vercel-build": "vercel build"
+    "server-p": "ENVIRONMENT=production nodemon server.js"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.7",
