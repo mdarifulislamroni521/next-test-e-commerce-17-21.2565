@@ -3,7 +3,10 @@ const next = require("next");
 const { parse } = require("url");
 
 const DEV = process.env.ENVIRONMENT !== "production";
-const PORT = 10000;
+console.log("process.env.ENVIRONMENT", process.env.ENVIRONMENT);
+const PORT = process.env.ENVIRONMENT || 9001;
+
+console.log("PORT", PORT);
 const app = next({ dir: ".", dev: DEV });
 const handle = app.getRequestHandler();
 
