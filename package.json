@@ -3,9 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "main": "server.js",
-  "engines": {
-    "node": "16.x"
-  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -13,7 +10,8 @@
     "start": "next start",
     "lint": "next lint",
     "server": "nodemon server.js",
-    "server-p": "ENVIRONMENT=production nodemon server.js"
+    "server-p": "ENVIRONMENT=production nodemon server.js",
+    "vercel-build": "vercel build"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.7",
