@@ -2,6 +2,10 @@
   "name": "ecommerce",
   "version": "0.1.0",
   "private": true,
+  "main": "server.js",
+  "engines": {
+    "node": "16.17.1"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",

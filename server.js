@@ -12,6 +12,9 @@ const handle = app.getRequestHandler();
 // const routes = getRoutes();
 app.prepare().then(() => {
   const server = express();
+  server.get("/api", (req, res) => {
+    res.status(200).json({ status: "200 OK" });
+  });
   server.get("*", (req, res) => {
     // const parsedUrl = parse(req.url, true);
     // const { pathname, query } = parsedUrl;
